@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+
+
+
+<h1>Calculateur de taxe</h1>
+<h6><i>Par Mr Cheval</i></h6>
+
+<div id="taxe">
+  <input v-model="leinput"> 
+  <button v-on:click="calcule()">Calcule </button>
+
+  <p>Avant taxe {{ leinput }}</p>
+  <p>Apres taxe {{ total }}</p>
+
+</div>
+
+
+
+<a href="/taxe"> het </a>
+
+
+
+<script>
+
+var vm = new Vue({
+  el: '#taxe',
+  data: {
+    taxe : 15 ,
+    leinput: 0,
+    avectaxe: 0,
+    total: 0
+  },
+  computed: {
+    calcule: function () {
+      this.avectaxe =  this.taxe * Number(this.leinput) /100; 
+      this.total = this.avectaxe + Number(this.leinput);
+    }
+  }
+})
+
+</script>
+     
+     
+
+
+
+
+
+
+
+
+</body>
+</html>
